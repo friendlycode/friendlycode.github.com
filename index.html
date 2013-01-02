@@ -57,8 +57,20 @@
     ================================================== -->
     <div class="carousel slide">
       <div class="carousel-inner">
-        <div class="item active">
-          <img class="background" src="{{ site.content.banner }}">
+        <div class="item active lazy-load" data-src-small="{{ site.content.banner-small }}" data-src-large="{{ site.content.banner-large }}" >
+
+        
+        <noscript>
+          <style type="text/css">
+            .lazy-load{
+              background-image:url({{ site.content.banner-small }}); 
+              background-size: cover; 
+              background-position-x: 50%; 
+              background-repeat-y: no-repeat;
+            }
+          </style>
+        </noscript>
+
           <div class="container">
 
             <div class="carousel-caption">
@@ -107,5 +119,43 @@
       </footer>
 
     </div><!-- /.container -->
+    <script>
+        
+    LZLD = {};
+
+    //get pixel ratio, default to 1
+    LZLD.devicePixelRatio = window.devicePixelRatio || 1;
+
+    //screenwidth * pixelratio
+    LZLD.screenWidth = window.innerWidth * LZLD.devicePixelRatio;
+
+    //get images blocks and loop through them
+    LZLD.lazyLoadImages = function(){
+        var lazyloadUs = document.getElementsByClassName("lazy-load");                
+        for(var i = 0; i < lazyloadUs.length; i++){       
+            LZLD.lazyloadImage(lazyloadUs[i]);
+        }
+    }
+
+    LZLD.lazyloadImage = function(lazyLoadMe){
+        
+        var noscriptTag = lazyLoadMe.children[0];
+
+        var imgSRCSmall = lazyLoadMe.getAttribute("data-src-small");
+        var imgSRCLarge = lazyLoadMe.getAttribute("data-src-large");
+
+        var bstyle1="background-image:url(\""
+        var bstyle2="\"); background-size: cover; background-position-x: 50%; background-repeat-y: no-repeat;"
+
+        if(LZLD.screenWidth < 767){
+            lazyLoadMe.setAttribute("style", bstyle1 + imgSRCSmall + bstyle2);
+        }else{
+            lazyLoadMe.setAttribute("style", bstyle1 + imgSRCLarge + bstyle2);
+        }
+    }
+
+    // do it
+    LZLD.lazyLoadImages();
+    </script>
   </body>
 </html>

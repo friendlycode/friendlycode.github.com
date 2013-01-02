@@ -15,6 +15,8 @@ content:
     meetup-invite: "A casual <a href='http://www.meetup.com/cfabrigade/Grand-Rapids-MI/'>meetup</a>, usually bi-weekly."
     contact: "Our brigade captain is Jonathan Pichot (<a href=\"mailto:pichot@friendlycode.org\">pichot@friendlycode.org</a> or <a href=\"http://twitter.com/jonpichot\">@jonpichot</a>)."
     banner: ./images/gr-skyline.jpg
+    banner-large: "/images/gr-skyline-500-progressive.jpg"
+    banner-small: "/images/gr-skyline-300-progressive.jpg"
     projects:
       - name: Viget, a Grand Rapids local wiki
         content: "<a href='http://viget.org'>Viget</a>, a Grand Rapids local wiki. To contribute to Viget, check out the <a href=\"http://viget.org/Guide\">Getting Started</a> guide."
