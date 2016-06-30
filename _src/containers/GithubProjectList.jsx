@@ -1,19 +1,9 @@
-var GithubRepositoryItem = React.createClass({
-  render: function() {
-    return (
-      <li className="project">
-        <div>
-          <h3>{this.props.repo.name}</h3>
-          <p>{this.props.repo.description}</p>
-          <a className="btn" href={this.props.repo.html_url} target="_blank">View on Github</a>
-        </div>
-      </li>
-    );
-  }
-});
+import React from 'react';
 
-var GithubRepositoryList = React.createClass({
-  render: function() {
+import GithubRepositoryItem from '../components/GithubRepositoryItem'
+
+export default class GithubProjectList extends React.Component {
+  render() {
     var repos = [];
 
     jQuery.ajax({
@@ -39,9 +29,4 @@ var GithubRepositoryList = React.createClass({
       </div>
     );
   }
-});
-
-React.render(
-  <GithubRepositoryList source='https://api.github.com/orgs/friendlycode/repos' />,
-  document.getElementById('github-projects')
-);
+}

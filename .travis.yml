@@ -12,7 +12,6 @@ before_cache:
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  # speeds up installation of html-proofer
-  - secure: "UDM1SACHM7XVf6oG8oFTe2A8Jd5Drsd8HCwMvlOkkeab02KO+0sS9myTRrDicvvEoKB8gNG1u1S74KH43mPScT58qgwYQMDkGl4IkSTyfZPnukbErQGyRoFlL8OY8G33ksjav/O0hnQyhWLtKXcFL/NL0AF0xavzmLBTP6jyi9k="
 
 branches:
   except:

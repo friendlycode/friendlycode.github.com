@@ -10,10 +10,12 @@ Based on the Code for Virginia Beach landing page (http://code4hr.org/)
 
 * Ruby 2.1.2: `$ rbenv install 2.1.2`
 * Bundler: `$ gem install bundler`
+* Node: [Download Node](https://nodejs.org/en/)
 
 ### Running locally
 
 ```
+$ make build
 $ make run
 ```
 
